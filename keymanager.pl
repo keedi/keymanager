@@ -2,7 +2,7 @@
 
 use Mojolicious::Lite;
 
-=head2 /
+=head2 GET /
 
 전체 기능 링크를 보여줍니다.
 
@@ -13,7 +13,7 @@ get "/" => sub {
     $c->render( template => "index" );
 };
 
-=head2 /login
+=head2 GET /login
 
 로그인을 수행합니다.
 
@@ -24,7 +24,7 @@ get "/login" => sub {
     $c->render( template => "login" );
 };
 
-=head2 /logout
+=head2 GET /logout
 
 로그아웃을 수행합니다.
 
@@ -35,7 +35,7 @@ get "/logout" => sub {
     $c->render( template => "logout" );
 };
 
-=head2 /key/delete
+=head2 GET /key/delete
 
 지울 호스트를 입력하기 위한 화면입니다.
 
@@ -46,7 +46,7 @@ get "/key/delete" => sub {
     $c->render( template => "key-delete" );
 };
 
-=head2 /host/:host/key/delete
+=head2 GET /host/:host/key/delete
 
 해당 호스트의 키를 삭제하도록 서버에 요청합니다.
 
@@ -62,7 +62,7 @@ get "/host/:host/key/delete" => sub {
     );
 };
 
-=head2 /user/:user/history
+=head2 GET /user/:user/history
 
 해당 사용자가 요청한 내역을 열람합니다.
 이 화면은 해당 사용자나 관리자만이 열람할 수 있습니다.
@@ -79,7 +79,7 @@ get "/user/:user/history" => sub {
     );
 };
 
-=head2 /history
+=head2 GET /history
 
 모든 사용자가 요청한 내역을 열람합니다.
 이 화면은 관리자만이 열람할 수 있습니다.
